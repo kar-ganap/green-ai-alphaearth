@@ -1,0 +1,58 @@
+{
+  "test_name": "test_1_separability",
+  "timestamp": "2025-10-15T06:20:54.850911",
+  "config": {
+    "n_samples_requested": 48,
+    "years": [
+      2019,
+      2020,
+      2021
+    ],
+    "default_year": 2020,
+    "threshold": 0.85
+  },
+  "data": {
+    "n_cleared_locations": 48,
+    "n_intact_locations": 17,
+    "n_cleared_embeddings": 48,
+    "n_intact_embeddings": 17
+  },
+  "results": {
+    "mean_accuracy": 0.7692307692307692,
+    "std_accuracy": 0.04865042554105199,
+    "mean_roc_auc": 0.8488888888888889,
+    "std_roc_auc": 0.1278212486441056,
+    "mean_f1": 0.8352065547111985,
+    "std_f1": 0.042608134798870066,
+    "mean_precision": 0.8822222222222222,
+    "std_precision": 0.09777777777777777,
+    "mean_recall": 0.8133333333333332,
+    "std_recall": 0.11619481299912332,
+    "fold_accuracy": [
+      0.7692307692307693,
+      0.8461538461538461,
+      0.7692307692307693,
+      0.6923076923076923,
+      0.7692307692307693
+    ],
+    "fold_roc_auc": [
+      1.0,
+      0.8,
+      1.0,
+      0.75,
+      0.6944444444444444
+    ],
+    "n_cleared": 48,
+    "n_intact": 17,
+    "imbalance_ratio": 2.823529411764706
+  },
+  "decision": {
+    "primary_metric": "roc_auc",
+    "roc_auc_threshold": 0.8,
+    "roc_auc": 0.8488888888888889,
+    "accuracy": 0.7692307692307692,
+    "f1_score": 0.8352065547111985,
+    "passed": true,
+    "status": "PASS"
+  }
+}

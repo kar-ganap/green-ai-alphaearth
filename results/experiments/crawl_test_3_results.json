@@ -1,0 +1,58 @@
+{
+  "test_name": "test_3_generalization",
+  "timestamp": "2025-10-15T06:32:17.341853",
+  "config": {
+    "n_samples_per_region": 12,
+    "n_regions": 3,
+    "threshold": 0.5
+  },
+  "regions": {
+    "West": {
+      "min_lon": -60.0,
+      "max_lon": -58.0,
+      "min_lat": -12.0,
+      "max_lat": -8.0
+    },
+    "Central": {
+      "min_lon": -58.0,
+      "max_lon": -56.0,
+      "min_lat": -12.0,
+      "max_lat": -8.0
+    },
+    "East": {
+      "min_lon": -56.0,
+      "max_lon": -54.0,
+      "min_lat": -12.0,
+      "max_lat": -8.0
+    }
+  },
+  "results": {
+    "cv": 0.029580928917516493,
+    "overall_mean": 0.5479883675759022,
+    "overall_std": 0.016210004948888662,
+    "region_stats": {
+      "West": {
+        "mean": 0.5660746460672468,
+        "std": 0.2056694256737945,
+        "n_samples": 12
+      },
+      "Central": {
+        "mean": 0.5511440515691589,
+        "std": 0.2008130140290105,
+        "n_samples": 12
+      },
+      "East": {
+        "mean": 0.5267464050913008,
+        "std": 0.1802776857531134,
+        "n_samples": 12
+      }
+    },
+    "n_regions": 3
+  },
+  "decision": {
+    "threshold": 0.5,
+    "cv": 0.029580928917516493,
+    "passed": true,
+    "status": "PASS"
+  }
+}

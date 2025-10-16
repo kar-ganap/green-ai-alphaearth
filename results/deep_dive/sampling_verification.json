@@ -1,0 +1,201 @@
+{
+  "cleared_verification": [
+    {
+      "index": 0,
+      "lat": -9.381973977592233,
+      "lon": -57.76143655267285,
+      "tree_cover_2000": 97,
+      "loss_year": 2020,
+      "expected": 2020,
+      "matches": true
+    },
+    {
+      "index": 1,
+      "lat": -9.92857823171835,
+      "lon": -57.94931079763111,
+      "tree_cover_2000": 100,
+      "loss_year": 2020,
+      "expected": 2020,
+      "matches": true
+    },
+    {
+      "index": 2,
+      "lat": -9.901498627896244,
+      "lon": -58.77854158626222,
+      "tree_cover_2000": 99,
+      "loss_year": 2020,
+      "expected": 2020,
+      "matches": true
+    },
+    {
+      "index": 3,
+      "lat": -8.357082602914504,
+      "lon": -57.605354107800146,
+      "tree_cover_2000": 89,
+      "loss_year": 2020,
+      "expected": 2020,
+      "matches": true
+    },
+    {
+      "index": 4,
+      "lat": -9.270678747858543,
+      "lon": -57.91385265624283,
+      "tree_cover_2000": 100,
+      "loss_year": 2020,
+      "expected": 2020,
+      "matches": true
+    },
+    {
+      "index": 5,
+      "lat": -8.332507893517715,
+      "lon": -54.836869861508355,
+      "tree_cover_2000": 100,
+      "loss_year": 2020,
+      "expected": 2020,
+      "matches": true
+    },
+    {
+      "index": 6,
+      "lat": -8.299019629491124,
+      "lon": -54.95395646090693,
+      "tree_cover_2000": 97,
+      "loss_year": 2020,
+      "expected": 2020,
+      "matches": true
+    },
+    {
+      "index": 7,
+      "lat": -9.35852649953784,
+      "lon": -56.985269308247695,
+      "tree_cover_2000": 100,
+      "loss_year": 2020,
+      "expected": 2020,
+      "matches": true
+    },
+    {
+      "index": 8,
+      "lat": -8.702082499529586,
+      "lon": -54.59848442641821,
+      "tree_cover_2000": 100,
+      "loss_year": 2020,
+      "expected": 2020,
+      "matches": true
+    },
+    {
+      "index": 9,
+      "lat": -8.128100628506143,
+      "lon": -55.56370036159705,
+      "tree_cover_2000": 100,
+      "loss_year": 2020,
+      "expected": 2020,
+      "matches": true
+    },
+    {
+      "index": 10,
+      "lat": -8.97091939853655,
+      "lon": -54.402078372656604,
+      "tree_cover_2000": 97,
+      "loss_year": 2020,
+      "expected": 2020,
+      "matches": true
+    },
+    {
+      "index": 11,
+      "lat": -9.487916062570461,
+      "lon": -56.88409409490668,
+      "tree_cover_2000": 95,
+      "loss_year": 2020,
+      "expected": 2020,
+      "matches": true
+    },
+    {
+      "index": 12,
+      "lat": -9.30412605491128,
+      "lon": -56.89072800620913,
+      "tree_cover_2000": 100,
+      "loss_year": 2020,
+      "expected": 2020,
+      "matches": true
+    },
+    {
+      "index": 13,
+      "lat": -9.986010182293104,
+      "lon": -55.8846232165781,
+      "tree_cover_2000": 84,
+      "loss_year": 2020,
+      "expected": 2020,
+      "matches": true
+    },
+    {
+      "index": 14,
+      "lat": -8.022913764157499,
+      "lon": -55.27589546547029,
+      "tree_cover_2000": 100,
+      "loss_year": 2020,
+      "expected": 2020,
+      "matches": true
+    }
+  ],
+  "intact_verification": [
+    {
+      "index": 0,
+      "lat": -9.533369635031672,
+      "lon": -58.8702843352866,
+      "tree_cover_2000": 100,
+      "loss_year": 2015,
+      "expected": "no loss or \u22642015",
+      "matches": true
+    },
+    {
+      "index": 1,
+      "lat": -9.92225421156767,
+      "lon": -58.79307638762866,
+      "tree_cover_2000": 89,
+      "loss_year": 2013,
+      "expected": "no loss or \u22642015",
+      "matches": true
+    },
+    {
+      "index": 2,
+      "lat": -9.844929623947412,
+      "lon": -59.87769025580675,
+      "tree_cover_2000": 100,
+      "loss_year": 2010,
+      "expected": "no loss or \u22642015",
+      "matches": true
+    },
+    {
+      "index": 3,
+      "lat": -8.557569218564225,
+      "lon": -54.80966195885084,
+      "tree_cover_2000": 100,
+      "loss_year": 2006,
+      "expected": "no loss or \u22642015",
+      "matches": true
+    },
+    {
+      "index": 4,
+      "lat": -9.83104457542518,
+      "lon": -55.429240328928046,
+      "tree_cover_2000": 100,
+      "loss_year": 2002,
+      "expected": "no loss or \u22642015",
+      "matches": true
+    },
+    {
+      "index": 5,
+      "lat": -8.110465949954223,
+      "lon": -55.328892343098396,
+      "tree_cover_2000": 99,
+      "loss_year": 2014,
+      "expected": "no loss or \u22642015",
+      "matches": true
+    }
+  ],
+  "summary": {
+    "n_cleared": 15,
+    "n_intact": 6,
+    "cleared_match_rate": 1.0,
+    "intact_match_rate": 1.0
+  }
+}

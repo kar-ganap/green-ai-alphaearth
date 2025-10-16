@@ -1,0 +1,28 @@
+{
+  "timestamp": "2025-10-15T07:54:49.441406",
+  "test": "q2_vs_q4_comparison",
+  "data": {
+    "q2": {
+      "n": 6,
+      "mean": 0.7817639500207078,
+      "std": 0.13885716097003425,
+      "se": 0.05668819858468193
+    },
+    "q4": {
+      "n": 3,
+      "mean": 0.3759102242881324,
+      "std": 0.1017953802377626,
+      "se": 0.05877159018253256
+    },
+    "difference": {
+      "absolute": 0.40585372573257533,
+      "percent": 107.96559910046273
+    }
+  },
+  "statistical_test": {
+    "test_name": "Welch Two-Sample t-Test",
+    "t_statistic": 4.970305521753363,
+    "degrees_of_freedom": 5.535893939192227,
+    "p_value_two_tailed": 0.0031726898715107588,
+    "p_value_one_tailed_q2_gt_q4": 0.0015863449357553794,
+    "significant_at_0.05": 

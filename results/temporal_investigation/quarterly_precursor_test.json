@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "date": "2025-10-15T17:12:22.349228",
+    "years": [
+      2019,
+      2020,
+      2021
+    ],
+    "hotspots": [
+      {
+        "name": "Rond\u00f4nia",
+        "min_lon": -63,
+        "max_lon": -60,
+        "min_lat": -12,
+        "max_lat": -9
+      },
+      {
+        "name": "Par\u00e1",
+        "min_lon": -54,
+        "max_lon": -51,
+        "min_lat": -7,
+        "max_lat": -4
+      },
+      {
+        "name": "Mato Grosso",
+        "min_lon": -58,
+        "max_lon": -55,
+        "min_lat": -13,
+        "max_lat": -10
+      }
+    ],
+    "total_pixels": 0,
+    "with_glad": 0,
+    "intact": 7
+  },
+  "quarterly_results": {},
+  "interpretation": {
+    "q4_significant": false,
+    "precursor_capability": "NO - Only concurrent detection (0-3 months)"
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "n_cleared": 15,
+  "n_intact": 6,
+  "embedding_dim": 64,
+  "top_dimensions": [
+    {
+      "dimension": 56,
+      "cohens_d": 2.4695676025545286
+    },
+    {
+      "dimension": 49,
+      "cohens_d": 2.245737297529422
+    },
+    {
+      "dimension": 3,
+      "cohens_d": 2.089626049605243
+    },
+    {
+      "dimension": 52,
+      "cohens_d": 2.0479969621099143
+    },
+    {
+      "dimension": 1,
+      "cohens_d": 1.9277857159369725
+    },
+    {
+      "dimension": 50,
+      "cohens_d": 1.9230822969689796
+    },
+    {
+      "dimension": 31,
+      "cohens_d": 1.898808515791672
+    },
+    {
+      "dimension": 5,
+      "cohens_d": 1.7875567348488015
+    },
+    {
+      "dimension": 22,
+      "cohens_d": 1.7495824711958456
+    },
+    {
+      "dimension": 17,
+      "cohens_d": 1.7341925671658907
+    },
+    {
+      "dimension": 6,
+      "cohens_d": 1.7236237817341578
+    },
+    {
+      "dimension": 53,
+      "cohens_d": 1.7097818470983954
+    },
+    {
+      "dimension": 42,
+      "cohens_d": 1.6866491483606871
+    },
+    {
+      "dimension": 35,
+      "cohens_d": 1.6446683962413795
+    },
+    {
+      "dimension": 54,
+      "cohens_d": 1.5781273458834595
+    },
+    {
+      "dimension": 60,
+      "cohens_d": 1.572382796943733
+    },
+    {
+      "dimension": 63,
+      "cohens_d": 1.5369300379759694
+    },
+    {
+      "dimension": 0,
+      "cohens_d": 1.5269367403814509
+    },
+    {
+      "dimension": 4,
+      "cohens_d": 1.470372291133144
+    },
+    {
+      "dimension": 30,
+      "cohens_d": 1.4443335887296476
+    }
+  ],
+  "temporal_analysis": {
+    "dim_56": {
+      "dimension": 56,
+      "cleared_y1_mean": 0.07106189926951174,
+      "intact_y1_mean": 0.02271946687171601,
+      "cleared_y1_to_y_change": -0.05015096757657311,
+      "intact_y1_to_y_change": 0.006889657823913878,
+      "direction": "decreasing",
+      "acceleration": -0.04747302319620659
+    },
+    "dim_49": {
+      "dimension": 49,
+      "cleared_y1_mean": -0.05747943098808152,
+      "intact_y1_mean": -0.007566320645905423,
+      "cleared_y1_to_y_change": -0.007771369985902861,
+      "intact_y1_to_y_change": 0.004162501601947969,
+      "direction": "decreasing",
+      "acceleration": 0.0022350378059720604
+    },
+    "dim_3": {
+      "dimension": 3,
+      "cleared_y1_mean": -0.09528232731000898,
+      "intact_y1_mean": -0.03941048314750737,
+      "cleared_y1_to_y_change": 0.02036139946174549,
+      "intact_y1_to_y_change": -0.001753171856978088,
+      "direction": "increasing",
+      "acceleration": 0.027771882609252865
+    },
+    "dim_52": {
+      "dimension": 52,
+      "cleared_y1_mean": -0.0204721261053441,
+      "intact_y1_mean": -0.12554145841343076,
+      "cleared_y1_to_y_change": -0.05554786620530565,
+      "intact_y1_to_y_change": -0.003988209662950134,
+      "direction": "decreasing",
+      "acceleration": -0.055215686274509804
+    },
+    "dim_1": {
+      "dimension": 1,
+      "cleared_y1_mean": 0.02161630142252979,
+      "intact_y1_mean": 0.09343073176983212,
+      "cleared_y1_to_y_change": 0.017859797513776754,
+      "intact_y1_to_y_change": -0.01956170703575547,
+      "direction": "increasing",
+      "acceleration": 0.01270895809304114
+    },
+    "dim_50": {
+      "dimension": 50,
+      "cleared_y1_mean": 0.19779879533512754,
+      "intact_y1_mean": 0.061412277329232344,
+      "cleared_y1_to_y_change": -0.11742765602973218,
+      "intact_y1_to_y_change": 0.011185441496860182,
+      "direction": "decreasing",
+      "acceleration": -0.11910495963091121
+    },
+    "dim_31": {
+      "dimension": 31,
+      "cleared_y1_mean": -0.13256439830834293,
+      "intact_y1_mean": -0.054717416378316036,
+      "cleared_y1_to_y_change": 0.019926694860950923,
+      "intact_y1_to_y_change": -0.015194156093810076,
+      "direction": "increasing",
+      "acceleration": 0.029879789824426517
+    },
+    "dim_5": {
+      "dimension": 5,
+      "cleared_y1_mean": -0.03633474304754581,
+      "intact_y1_mean": 0.12898628732538767,
+      "cleared_y1_to_y_change": 0.10672408048186596,
+      "intact_y1_to_y_change": -0.012210688196847364,
+      "direction": "increasing",
+      "acceleration": 0.09842368319876972
+    },
+    "dim_22": {
+      "dimension": 22,
+      "cleared_y1_mean": 0.12638831218762017,
+      "intact_y1_mean": -0.11347430475458158,
+      "cleared_y1_to_y_change": -0.1672300397283096,
+      "intact_y1_to_y_change": 0.015019864154812252,
+      "direction": "decreasing",
+      "acceleration": -0.16390824042035113
+    },
+    "dim_17": {
+      "dimension": 17,
+      "cleared_y1_mean": -0.055929257977700896,
+      "intact_y1_mean": 0.060766371908240434,
+      "cleared_y1_to_y_change": 0.021755734973728066,
+      "intact_y1_to_y_change": 0.009534794309880803,
+      "direction": "increasing",
+      "acceleration": 0.018626682045367188
+    }
+  }
+}

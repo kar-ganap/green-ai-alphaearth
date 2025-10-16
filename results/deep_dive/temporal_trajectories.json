@@ -1,0 +1,29 @@
+{
+  "n_cleared": 15,
+  "n_intact": 6,
+  "statistical_tests": {
+    "test1_y1_to_y_change": {
+      "cleared_mean": 0.5835001694255084,
+      "cleared_std": 0.23519304420666118,
+      "intact_mean": 0.2276746918891257,
+      "intact_std": 0.10405043533973156,
+      "t_statistic": 3.3945939060711168,
+      "p_value": 0.0030414265434362516,
+      "cohens_d": 1.956647173611249,
+      "significant": true
+    },
+    "test2_acceleration": {
+      "cleared_2018_2019_mean": 0.1283713234657225,
+      "cleared_2019_2020_mean": 0.5835001694255084,
+      "acceleration_mean": 0.45512884595978603,
+      "t_statistic_paired": 6.651765049354668,
+      "p_value_paired": 1.0929796099198889e-05,
+      "significant": true
+    },
+    "test3_stability": {
+      "intact_mean_change": 0.21656539968760524,
+      "cleared_y1_to_y_change": 0.5835001694255084,
+      "ratio": 2.6943370005882987
+    }
+  }
+}

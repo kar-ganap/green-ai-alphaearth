@@ -1,0 +1,137 @@
+{
+  "metadata": {
+    "date": "2025-10-15T14:03:32.987311",
+    "study_region": {
+      "min_lon": -73,
+      "max_lon": -50,
+      "min_lat": -15,
+      "max_lat": 5
+    },
+    "cleared_years": [
+      2019,
+      2020,
+      2021
+    ],
+    "total_cleared_pixels": 17,
+    "total_intact_pixels": 1,
+    "note": "Multi-year sampling used to increase sample size"
+  },
+  "test1_q2_vs_q4": null,
+  "test2_q3_separate": {
+    "q3": {
+      "n": 12,
+      "mean": 0.18071199492861845,
+      "std": 0.09637023636711575,
+      "distances": [
+        0.19114529772492786,
+        0.1641701568378631,
+        0.43563191023044545,
+        0.1496018990524298,
+        0.15572372193087386,
+        0.16687897798652837,
+        0.1691240380685879,
+        0.29699619703992597,
+        0.11854346060739557,
+        0.10893521142996974,
+        0.08200765257653025,
+        0.1297854156579435
+      ]
+    },
+    "q3_vs_q4": {
+      "t_statistic": 1.3710828834758082,
+      "p_value": 0.19192837744093938,
+      "significant": false
+    }
+  },
+  "test3_quarterly_distribution": {
+    "distribution": {
+      "Q2": {
+        "n": 1,
+        "mean": 0.11721225433992069,
+        "std": 0.0,
+        "distances": [
+          0.11721225433992069
+        ],
+        "observed_percent": 5.882352941176471,
+        "expected_range": [
+          20,
+          25
+        ],
+        "matches_literature": false
+      },
+      "Q3": {
+        "n": 12,
+        "mean": 0.18071199492861845,
+        "std": 0.09637023636711575,
+        "distances": [
+          0.19114529772492786,
+          0.1641701568378631,
+          0.43563191023044545,
+          0.1496018990524298,
+          0.15572372193087386,
+          0.16687897798652837,
+          0.1691240380685879,
+          0.29699619703992597,
+          0.11854346060739557,
+          0.10893521142996974,
+          0.08200765257653025,
+          0.1297854156579435
+        ],
+        "observed_percent": 70.58823529411765,
+        "expected_range": [
+          30,
+          35
+        ],
+        "matches_literature": false
+      },
+      "Q4": {
+        "n": 4,
+        "mean": 0.1376845459756605,
+        "std": 0.029044826231850673,
+        "distances": [
+          0.10523436981318993,
+          0.1747636823948717,
+          0.12857978362133984,
+          0.1421603480732405
+        ],
+        "observed_percent": 23.529411764705884,
+        "expected_range": [
+          20,
+          25
+        ],
+        "matches_literature": true
+      },
+      "Q1": {
+        "n": 0,
+        "observed_percent": 0.0,
+        "expected_range": [
+          15,
+          20
+        ],
+        "matches_literature": false
+      }
+    },
+    "vs_intact": {
+      "Q3": {
+        "t_statistic": NaN,
+        "p_value": NaN,
+        "significant": false
+      },
+      "Q4": {
+        "t_statistic": NaN,
+        "p_value": NaN,
+        "significant": false
+      }
+    },
+    "intact_control": {
+      "n": 1,
+      "mean": 0.15460335423569413,
+      "std": NaN
+    },
+    "anova": {
+      "f_statistic": 0.7427355953865171,
+      "p_value": 0.4033065281052936,
+      "significant": false
+    }
+  }
+}

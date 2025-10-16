@@ -1,0 +1,107 @@
+# Deforestation Early Warning System - Configuration
+
+# Project metadata
+project:
+  name: "deforestation-early-warning"
+  version: "1.0.0"
+  description: "Predict deforestation 90 days in advance using AlphaEarth"
+
+# Paths
+paths:
+  data_dir: "data"
+  results_dir: "results"
+  cache_dir: "data/cache"
+  figures_dir: "results/figures"
+  models_dir: "results/models"
+
+# Data sources
+data:
+  # AlphaEarth embeddings
+  alphaearth:
+    collection: "GOOGLE/SATELLITE_EMBEDDING/V1/ANNUAL"
+    resolution_m: 10
+    dimensions: 64
+    years: [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
+
+  # Deforestation labels
+  labels:
+    primary_source: "UMD/hansen/global_forest_change_2024_v1_12"
+    secondary_sources:
+      - "GLAD/alerts"
+      - "PRODES"  # Brazil only
+    resolution_m: 30
+    min_confidence: 0.7
+
+  # Context data
+  context:
+    roads: "OSM"
+    protected_areas: "WDPA"
+    elevation: "COPERNICUS/DEM/GLO30"
+
+  # Study region
+  region:
+    name: "Pará/Mato Grosso (Amazon deforestation hotspot)"
+    bounds:
+      min_lon: -60.0
+      max_lon: -54.0
+      min_lat: -12.0
+      max_lat: -8.0
+
+# Model configuration
+model:
+  type: "xgboost"
+  xgboost:
+    n_estimators: 200
+    max_depth: 6
+    learning_rate: 0.1
+    subsample: 0.8
+    colsample_bytree: 0.8
+    random_state: 42
+
+# Feature engineering
+features:
+  temporal:
+    velocity: true
+    acceleration: true
+    directional_consistency: true
+    recent_vs_historical: true
+    lookback_months: 12
+  spatial:
+    neighbor_homogeneity: true
+    neighbor_correlation: true
+    edge_proximity: true
+    neighbor_distance_m: 1000
+  context:
+    distance_to_road: true
+    clearing_history: true
+    terrain: true
+
+# Validation protocol
+validation:
+  spatial_cv:
+    n_folds: 5
+    buffer_km: 10
+    random_state: 42
+  temporal:
+    train_years: [2020, 2021, 2022]
+    test_year: 2023
+  requirements:
+    min_roc_auc: 0.75
+    min_precision_at_50_recall: 0.70
+    max_calibration_error: 0.10
+
+# Prediction settings
+prediction:
+  horizon_days: 90
+  threshold: 0.87
+
+# Crawl test thresholds
+crawl_tests:
+  test_1_separability:
+    min_accuracy: 0.85
+  test_2_temporal:
+    max_p_value: 0.05
+  test_3_generalization:
+    max_cv: 0.5
+  test_4_minimal:
+    min_auc: 0.65

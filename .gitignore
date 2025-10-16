@@ -1,0 +1,94 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments (uv)
+.venv/
+venv/
+env/
+ENV/
+
+# uv
+.uv/
+
+# Package build
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints
+
+# Data
+data/*.pkl
+data/*.csv
+data/*.geojson
+data/*.tif
+data/*.h5
+.cache/
+data/cache/
+
+# Models
+results/models/*.pkl
+results/models/*.joblib
+results/models/*.h5
+results/models/*.pt
+
+# Results (exclude large/sensitive files, keep documentation)
+results/figures/*.png
+results/figures/*.pdf
+results/*.json
+experiments/*.json
+
+# Keep temporal investigation results (CRAWL phase documentation)
+!results/temporal_investigation/*.json
+!results/temporal_investigation/*.png
+
+# Logs
+logs/
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+secrets.yaml
+credentials.json
+
+# Large files
+*.tar.gz
+*.zip
+*.7z
+
+# Temporary
+tmp/
+temp/
+*.tmp
+
+# Google Earth Engine
+.config/earthengine/
+
+# Keep important files
+!data/README.md
+!results/README.md
+!.gitkeep

@@ -1,0 +1,19 @@
+{
+  "date": "2025-10-15",
+  "objective": "Extended CRAWL to test alternative Q4 precursor detection methods",
+  "tests_performed": {
+    "alternative_metrics": "Limited by stored distance data",
+    "dimension_specific": "CV analysis suggests no hidden patterns",
+    "visualization": "Clear Q4-intact overlap visible",
+    "nonparametric_tests": "Consistent p~0.065 across methods",
+    "trajectory_modeling": "Variance proxy suggests no unique Q4 pattern"
+  },
+  "key_findings": {
+    "monotonic_decline": "Q1\u2192Q2\u2192Q3\u2192Q4 effect sizes: 5.99, 3.52, 1.97, 0.81",
+    "consistent_pvalues": "All tests converge on p~0.065 (borderline, not significant)",
+    "distribution_overlap": "~40% Q4 pixels indistinguishable from intact",
+    "variance_similarity": "Q4 CV similar to Q3, not heterogeneity issue"
+  },
+  "conclusion": "Extended testing CONFIRMS: No reliable Q4 precursor signal",
+  "recommendation": "Proceed to WALK with detection framing. Revisit if feature engineering reveals signals."
+}

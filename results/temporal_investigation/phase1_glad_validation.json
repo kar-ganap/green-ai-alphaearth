@@ -1,0 +1,41 @@
+{
+  "timestamp": "2025-10-15T07:54:49.441406",
+  "phase": "phase_1_glad_validation",
+  "data": {
+    "n_clearings_total": 53,
+    "n_clearings_with_dates": 29,
+    "quarterly_counts": {
+      "1": 1,
+      "2": 6,
+      "3": 19,
+      "4": 3
+    }
+  },
+  "quarterly_results": {
+    "2": {
+      "n_samples": 6,
+      "mean_distance": 0.7817639500207078,
+      "std_distance": 0.13885716097003425,
+      "t_statistic": 12.589032660564696,
+      "p_value": 2.807960256732834e-05
+    },
+    "3": {
+      "n_samples": 19,
+      "mean_distance": 0.777503167745152,
+      "std_distance": 0.2335768404882944,
+      "t_statistic": 14.122404288643606,
+      "p_value": 1.7596413930268636e-11
+    },
+    "4": {
+      "n_samples": 3,
+      "mean_distance": 0.3759102242881324,
+      "std_distance": 0.1017953802377626,
+      "t_statistic": 5.222411234982323,
+      "p_value": 0.01738239599808616
+    }
+  },
+  "interpretation": {
+    "status": "INCONCLUSIVE",
+    "reason": "Insufficient quarterly data"
+  }
+}

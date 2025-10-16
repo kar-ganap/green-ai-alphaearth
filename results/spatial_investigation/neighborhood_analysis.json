@@ -1,0 +1,56 @@
+{
+  "analysis": "neighborhood_spatial_features",
+  "n_cleared": 15,
+  "n_intact": 6,
+  "features": {
+    "gradient_magnitude": {
+      "cleared_mean": 0.16887325021755242,
+      "cleared_std": 0.0749207449793331,
+      "intact_mean": 0.19247466086207124,
+      "intact_std": 0.09279973394287917,
+      "difference": -0.023601410644518817,
+      "difference_pct": -12.262087143736682,
+      "t_statistic": -0.5777880486503355,
+      "p_value": 0.5701920619824559,
+      "cohens_d": -0.2798518718439844,
+      "significant": false
+    },
+    "heterogeneity": {
+      "cleared_mean": 0.06114905748728909,
+      "cleared_std": 0.05053968353517417,
+      "intact_mean": 0.11090975847053341,
+      "intact_std": 0.07924709739853099,
+      "difference": -0.049760700983244324,
+      "difference_pct": -44.86593575664921,
+      "t_statistic": -1.628860122982661,
+      "p_value": 0.1198106984669347,
+      "cohens_d": -0.7487104427040785,
+      "significant": false
+    },
+    "neighbor_variance": {
+      "cleared_mean": 0.19506918162011783,
+      "cleared_std": 0.08810826457175405,
+      "intact_mean": 0.2630262402369505,
+      "intact_std": 0.13045696828358305,
+      "difference": -0.06795705861683266,
+      "difference_pct": -25.83660799607396,
+      "t_statistic": -1.31170907411861,
+      "p_value": 0.20524774361935355,
+      "cohens_d": -0.610492922469123,
+      "significant": false
+    },
+    "max_distance": {
+      "cleared_mean": 0.2677066682088285,
+      "cleared_std": 0.13389140116406964,
+      "intact_mean": 0.3781450874284329,
+      "intact_std": 0.2279287532662334,
+      "difference": -0.1104384192196044,
+      "difference_pct": -29.20530317361475,
+      "t_statistic": -1.3078722361884039,
+      "p_value": 0.206520581099194,
+      "cohens_d": -0.5908314830857383,
+      "significant": false
+    }
+  },
+  "interpretation": "\u2717 NO SIGNIFICANT SPATIAL SIGNAL\n\nCleared and intact pixels have similar Y-1 neighborhoods:\n  - No difference in gradients (edge detection)\n  - No difference in heterogeneity (mixed land use)\n\nPossible explanations:\n  1. Spatial precursors exist but not captured at 30m scale (try 100m, 500m)\n  2. Signal is in the embeddings themselves, not spatial statistics\n  3. Different clearing mechanisms (interior vs edge)\n\nRecommendation: Investigate further\n  - Try larger neighborhood radius (100m, 500m)\n  - Test distance to clearings/edges directly\n  - May need to pivot approach"
+}
