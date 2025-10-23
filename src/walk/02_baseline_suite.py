@@ -98,7 +98,8 @@ def extract_features(dataset, feature_type='simple'):
             features = [features_dict['distances']['Q4']]
 
         elif feature_type == 'simple':
-            # Distances + velocities
+            # Distances + velocities (NO FUTURE INFORMATION)
+            # Only use Q1-Q4 which are all sampled BEFORE clearing
             dist = features_dict['distances']
             vel = features_dict['velocities']
 
@@ -107,36 +108,37 @@ def extract_features(dataset, feature_type='simple'):
                 dist['Q2'],
                 dist['Q3'],
                 dist['Q4'],
-                dist['Clearing'],
+                # REMOVED: dist['Clearing'] - this is AFTER clearing!
                 vel['Q1_Q2'],
                 vel['Q2_Q3'],
                 vel['Q3_Q4'],
-                vel['Q4_Clearing'],
+                # REMOVED: vel['Q4_Clearing'] - uses future information!
             ]
 
         elif feature_type == 'all':
-            # All temporal features
+            # All temporal features (NO FUTURE INFORMATION)
+            # Only use Q1-Q4 timepoints sampled BEFORE clearing
             dist = features_dict['distances']
             vel = features_dict['velocities']
             acc = features_dict['accelerations']
             trend = features_dict['trend_consistency']
 
             features = [
-                # Distances
+                # Distances (Q1-Q4 only)
                 dist['Q1'],
                 dist['Q2'],
                 dist['Q3'],
                 dist['Q4'],
-                dist['Clearing'],
-                # Velocities
+                # REMOVED: dist['Clearing'] - this is AFTER clearing!
+                # Velocities (Q1-Q4 transitions only)
                 vel['Q1_Q2'],
                 vel['Q2_Q3'],
                 vel['Q3_Q4'],
-                vel['Q4_Clearing'],
-                # Accelerations
+                # REMOVED: vel['Q4_Clearing'] - uses future information!
+                # Accelerations (Q1-Q4 only)
                 acc['Q1_Q2_Q3'],
                 acc['Q2_Q3_Q4'],
-                acc['Q3_Q4_Clearing'],
+                # REMOVED: acc['Q3_Q4_Clearing'] - uses future information!
                 # Trend
                 trend,
             ]
