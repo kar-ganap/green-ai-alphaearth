@@ -309,25 +309,30 @@ class EarthEngineClient:
         loss = gfc.select("loss")
         loss_year = gfc.select("lossyear")
 
-        # Stable forest: high tree cover, no loss OR very old loss
-        max_year_code = max_loss_year - 2000
-
-        stable_mask = tree_cover.gte(min_tree_cover).And(
-            loss.eq(0).Or(loss_year.lte(max_year_code))
-        )
+        # Stable forest: high tree cover AND no loss
+        # Note: We only use loss.eq(0) to avoid EE sampling quirks with OR clauses
+        # The max_loss_year parameter is kept for API compatibility but not used
+        stable_mask = tree_cover.gte(min_tree_cover).And(loss.eq(0))
 
         stable_pixels = stable_mask.selfMask()
 
-        # Sample points
+        # Sample points - request 5x more due to EE sampling behavior
+        # EE's sample() often returns fewer pixels than requested
         sample = stable_pixels.sample(
             region=roi,
             scale=30,
-            numPixels=n_samples,
+            numPixels=n_samples * 5,
             seed=42,
             geometries=True,
         )
 
         features = sample.getInfo()["features"]
+
+        # Subsample to requested amount if we got more
+        if len(features) > n_samples:
+            import random
+            random.seed(42)
+            features = random.sample(features, n_samples)
 
         locations = []
         for feature in features:
