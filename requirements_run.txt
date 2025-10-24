@@ -1,0 +1,43 @@
+# RUN Phase Requirements - Deforestation Early Warning System
+# Production deployment requirements for REST API and Dashboard
+
+# Web Frameworks
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+streamlit==1.28.2
+streamlit-folium==0.15.1
+
+# Data Processing
+pandas>=1.5.0
+numpy>=1.24.0
+
+# Visualization
+plotly==5.17.0
+folium==0.15.0
+
+# ML & Model
+xgboost>=2.0.0
+scikit-learn>=1.3.0
+shap>=0.42.0
+
+# Earth Engine & Geospatial
+earthengine-api>=0.1.370
+google-auth>=2.23.0
+google-auth-oauthlib>=1.1.0
+google-auth-httplib2>=0.1.1
+
+# HTTP & API
+requests>=2.31.0
+httpx>=0.25.0
+
+# Validation
+pydantic>=2.4.0
+
+# Utilities
+python-dotenv>=1.0.0
+PyYAML>=6.0
+
+# Optional Production Features
+# redis>=5.0.0  # Uncomment for Redis caching
+# prometheus-client>=0.18.0  # Uncomment for monitoring
+# loguru>=0.7.2  # Uncomment for advanced logging
