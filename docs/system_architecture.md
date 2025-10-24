@@ -185,12 +185,12 @@ graph TB
     subgraph "Multiscale Features (66D)"
         COARSE[AlphaEarth Coarse<br/>1km radius]
         EMB64[Embeddings<br/>64D]
-        HET[Heterogeneity<br/>std(embeddings)]
+        HET[Heterogeneity<br/>std of embeddings]
         RNG[Range<br/>max - min]
     end
 
     subgraph "Temporal Feature (1D)"
-        YEAR[Normalized Year<br/>(year - 2020) / 4.0]
+        YEAR[Normalized Year<br/>year minus 2020 divided by 4]
     end
 
     subgraph "Output"
