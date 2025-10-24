@@ -1,6 +1,8 @@
 """
 Annual Feature Extraction for AlphaEarth
 
+DEPRECATED: This module is deprecated. Use src/walk/utils/feature_extraction instead.
+
 IMPORTANT: AlphaEarth provides ONE embedding per year, not quarterly.
 This module extracts annual features that match AlphaEarth's actual capabilities.
 
@@ -11,11 +13,17 @@ All "quarterly" features were redundant/zero because AlphaEarth embeddings
 don't change within a year.
 """
 
+import warnings
 import numpy as np
+
+# Import from consolidated module
+from .utils.feature_extraction import extract_annual_features as _extract_annual_features
 
 
 def extract_annual_features(client, sample: dict, year: int) -> np.ndarray:
     """
+    DEPRECATED: Use src.walk.utils.extract_annual_features() instead.
+
     Extract annual features from AlphaEarth embeddings.
 
     Uses 3 annual embeddings:
@@ -37,32 +45,13 @@ def extract_annual_features(client, sample: dict, year: int) -> np.ndarray:
         3-dimensional feature vector or None if extraction fails
         [delta_1yr, delta_2yr, acceleration]
     """
-    try:
-        lat, lon = sample['lat'], sample['lon']
-
-        # Get annual embeddings (any date within year works - they're all the same!)
-        emb_y_minus_2 = client.get_embedding(lat, lon, f"{year-2}-06-01")
-        emb_y_minus_1 = client.get_embedding(lat, lon, f"{year-1}-06-01")
-        emb_y = client.get_embedding(lat, lon, f"{year}-06-01")
-
-        if emb_y_minus_2 is None or emb_y_minus_1 is None or emb_y is None:
-            return None
-
-        emb_y_minus_2 = np.array(emb_y_minus_2)
-        emb_y_minus_1 = np.array(emb_y_minus_1)
-        emb_y = np.array(emb_y)
-
-        # Annual deltas
-        delta_1yr = np.linalg.norm(emb_y - emb_y_minus_1)
-        delta_2yr = np.linalg.norm(emb_y_minus_1 - emb_y_minus_2)
-
-        # Acceleration (is recent change faster than historical?)
-        acceleration = delta_1yr - delta_2yr
-
-        return np.array([delta_1yr, delta_2yr, acceleration])
-
-    except Exception as e:
-        return None
+    warnings.warn(
+        "annual_features.extract_annual_features() is deprecated. "
+        "Use src.walk.utils.extract_annual_features() instead.",
+        DeprecationWarning,
+        stacklevel=2
+    )
+    return _extract_annual_features(client, sample, year)
 
 
 def extract_annual_features_extended(client, sample: dict, year: int) -> np.ndarray:

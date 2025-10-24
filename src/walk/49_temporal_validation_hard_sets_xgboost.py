@@ -22,6 +22,7 @@ import sys
 
 sys.path.append(str(Path(__file__).parent.parent))
 from src.utils import get_config
+from src.walk.utils import features_to_array
 
 # Paths
 config = get_config()
@@ -102,33 +103,22 @@ def load_validation_data(year):
 
 
 def extract_features(samples):
-    """Extract 70D features from samples using Phase B method."""
+    """
+    Extract 70D features from samples using consolidated module.
+
+    Uses features_to_array() from consolidated feature extraction module.
+    """
     X = []
     y = []
 
     for sample in samples:
-        # Extract annual features (3D)
-        annual_features = sample.get('annual_features')
-        if annual_features is None:
-            raise ValueError(f"Sample missing annual_features: {sample.get('lat', 'unknown')}, {sample.get('lon', 'unknown')}")
-        annual_features = np.array(annual_features).flatten()
+        # Use consolidated module to convert sample features to 70D array
+        features_70d = features_to_array(sample)
 
-        # Extract coarse features (66D) from multiscale_features dict
-        multiscale_dict = sample.get('multiscale_features', {})
-        if not isinstance(multiscale_dict, dict):
-            raise ValueError(f"multiscale_features must be a dict, got {type(multiscale_dict)}")
+        if features_70d is None:
+            raise ValueError(f"Failed to extract features for sample: {sample.get('lat', 'unknown')}, {sample.get('lon', 'unknown')}")
 
-        # Define feature names in correct order: 64 embeddings + 2 stats
-        coarse_feature_names = [f'coarse_emb_{i}' for i in range(64)] + ['coarse_heterogeneity', 'coarse_range']
-        coarse_features = np.array([multiscale_dict[k] for k in coarse_feature_names])
-
-        # Extract or compute year feature (1D)
-        year = sample.get('year', 2021)
-        year_feature = (year - 2020) / 4.0  # Normalize to [0,1] for range 2020-2024
-
-        # Combine: 3D + 66D + 1D = 70D
-        combined = np.concatenate([annual_features, coarse_features, [year_feature]])
-        X.append(combined)
+        X.append(features_70d)
         y.append(sample.get('label', 0))
 
     return np.array(X), np.array(y)

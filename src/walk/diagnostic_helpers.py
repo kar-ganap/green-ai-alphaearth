@@ -1,6 +1,8 @@
 """
 Diagnostic Helper Functions
 
+DEPRECATED: This module is deprecated. Use src/walk/utils/feature_extraction instead.
+
 Shared functions for feature extraction and analysis across
 diagnostic and evaluation scripts.
 
@@ -8,11 +10,17 @@ IMPORTANT: AlphaEarth provides annual embeddings, not quarterly.
 All "quarterly" features extracted previously were redundant/zero.
 """
 
+import warnings
 import numpy as np
+
+# Import from consolidated module
+from .utils.feature_extraction import extract_annual_features as _extract_annual_features
 
 
 def extract_dual_year_features(client, sample: dict) -> np.ndarray:
     """
+    DEPRECATED: Use src.walk.utils.extract_annual_features() instead.
+
     Extract annual delta features for a sample.
 
     CORRECTED: Uses annual embeddings (AlphaEarth limitation).
@@ -32,33 +40,19 @@ def extract_dual_year_features(client, sample: dict) -> np.ndarray:
     Returns:
         3-dimensional feature vector or None if extraction fails
     """
-    lat, lon = sample['lat'], sample['lon']
-    year = sample['year']
+    warnings.warn(
+        "diagnostic_helpers.extract_dual_year_features() is deprecated. "
+        "Use src.walk.utils.extract_annual_features() instead.",
+        DeprecationWarning,
+        stacklevel=2
+    )
 
-    try:
-        # Get annual embeddings (any date within year works - they're all the same!)
-        emb_y_minus_2 = client.get_embedding(lat, lon, f"{year-2}-06-01")
-        emb_y_minus_1 = client.get_embedding(lat, lon, f"{year-1}-06-01")
-        emb_y = client.get_embedding(lat, lon, f"{year}-06-01")
-
-        if emb_y_minus_2 is None or emb_y_minus_1 is None or emb_y is None:
-            return None
-
-        emb_y_minus_2 = np.array(emb_y_minus_2)
-        emb_y_minus_1 = np.array(emb_y_minus_1)
-        emb_y = np.array(emb_y)
-
-        # Annual deltas
-        delta_1yr = np.linalg.norm(emb_y - emb_y_minus_1)
-        delta_2yr = np.linalg.norm(emb_y_minus_1 - emb_y_minus_2)
-
-        # Acceleration (is recent change faster than historical?)
-        acceleration = delta_1yr - delta_2yr
-
-        return np.array([delta_1yr, delta_2yr, acceleration])
-
-    except Exception as e:
+    # Extract year from sample and delegate to consolidated module
+    year = sample.get('year')
+    if year is None:
         return None
+
+    return _extract_annual_features(client, sample, year)
 
 
 # Feature names for interpretation

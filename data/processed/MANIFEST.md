@@ -215,8 +215,13 @@ hard_val_{use_case}_{year}_{timestamp}_features.pkl
 - After cleanup operations
 - Monthly review
 
-**Last Cleanup**: Never (first manifest creation)
-**Next Cleanup**: After user approval of recommendations
+**Last Cleanup**: 2025-10-24 (File cleanup completed)
+**Cleanup Summary**:
+- Deleted: 31 failed/old files (~200 KB)
+- Archived: 57 experimental/old files (~13.8 MB)
+- Remaining in main directory: 33 production files
+- Archive directories created: experiments/, old_models/, training_data/, validation_base/
+**Next Cleanup**: Quarterly review or when accumulating new experimental files
 
 ---
 
