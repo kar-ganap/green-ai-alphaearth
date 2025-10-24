@@ -177,8 +177,8 @@ graph TB
         E1[AlphaEarth<br/>year-2]
         E2[AlphaEarth<br/>year-1]
         E3[AlphaEarth<br/>year]
-        D1[delta_1yr<br/>||E3 - E2||]
-        D2[delta_2yr<br/>||E3 - E1||]
+        D1[delta_1yr<br/>norm of E3 - E2]
+        D2[delta_2yr<br/>norm of E3 - E1]
         ACC[acceleration<br/>D1 - D2]
     end
 
@@ -539,38 +539,6 @@ graph TB
     style CD fill:#fff4e6,stroke:#ff6f00,stroke-width:2px
     style WD fill:#fff4e6,stroke:#ff6f00,stroke-width:2px
     style RD fill:#c8e6c9,stroke:#388e3c,stroke-width:3px
-```
-
-### Timeline and Milestones
-
-```mermaid
-gantt
-    title Project Timeline (October 2025)
-    dateFormat YYYY-MM-DD
-    section CRAWL Phase
-    Single location test      :done, crawl1, 2025-10-14, 1d
-    Multi-location validation :done, crawl2, 2025-10-14, 1d
-    Temporal/geographic tests :done, crawl3, 2025-10-14, 1d
-
-    section WALK Phase
-    Data preparation          :done, walk1, 2025-10-14, 1d
-    Baseline models           :done, walk2, 2025-10-15, 2d
-    Hard validation sets      :done, walk3, 2025-10-16, 2d
-    Multiscale features       :done, walk4, 2025-10-17, 1d
-    Fire features (failed)    :done, walk5, 2025-10-18, 1d
-    Temporal validation       :done, walk6, 2025-10-19, 1d
-    Spatial leakage fix       :done, walk7, 2025-10-20, 1d
-    Production model          :done, walk8, 2025-10-21, 2d
-
-    section RUN Phase
-    Model service             :done, run1, 2025-10-23, 1d
-    REST API                  :done, run2, 2025-10-23, 1d
-    Dashboard (5 pages)       :done, run3, 2025-10-23, 1d
-    Testing & docs            :done, run4, 2025-10-23, 1d
-
-    section Cleanup
-    Repository cleanup        :active, cleanup1, 2025-10-24, 1d
-    Documentation             :active, cleanup2, 2025-10-24, 1d
 ```
 
 ---
